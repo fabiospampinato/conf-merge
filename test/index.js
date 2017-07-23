@@ -3,7 +3,7 @@
 
 import * as _ from 'lodash';
 import {describe} from 'ava-spec';
-import merge from './merge';
+import merge from '../dist';
 
 /* CONF MERGE */
 

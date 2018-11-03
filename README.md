@@ -1,8 +1,5 @@
 # Conf Merge
 
-![Issues](https://img.shields.io/github/issues/fabiospampinato/conf-merge.svg)
-[![NPM version](https://img.shields.io/npm/v/conf-merge.svg)](https://www.npmjs.com/package/conf-merge)
-
 Deep merges objects, concatenating arrays.
 
 It's simply a wrapper around [lodash](https://lodash.com)'s [_.mergeWith](https://lodash.com/docs/4.17.4#mergeWith), with a custom customizer.

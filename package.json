@@ -36,9 +36,8 @@
   },
   "keywords": [],
   "dependencies": {
-    "@types/lodash": "^4.14.58",
-    "lodash.isarray": "^4.0.0",
-    "lodash.mergewith": "^4.6.1"
+    "@types/lodash": "^4.14.117",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "ava": "^0.18.2",

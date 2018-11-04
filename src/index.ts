@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
-import * as isArray from 'lodash.isarray';
-import * as mergeWith from 'lodash.mergewith';
+import isArray from 'lodash/isArray';
+import mergeWith from 'lodash/mergeWith';
 
 /* CONF MERGE */
 

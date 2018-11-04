@@ -19,4 +19,4 @@ function confMerge ( object, ...sources ) {
 
 /* EXPORT */
 
-export default confMerge;
+export = Object.assign ( confMerge, { default: confMerge } );

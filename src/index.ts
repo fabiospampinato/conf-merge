@@ -1,15 +1,16 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
+import * as isArray from 'lodash.isarray';
+import * as mergeWith from 'lodash.mergewith';
 
 /* CONF MERGE */
 
 function confMerge ( object, ...sources ) {
 
-  return _.mergeWith ( object, ...sources, ( prev, next ) => {
+  return mergeWith ( object, ...sources, ( prev, next ) => {
 
-    if ( !_.isArray ( prev ) || !_.isArray ( next ) ) return;
+    if ( !isArray ( prev ) || !isArray ( next ) ) return;
 
     return prev.concat ( next );
 

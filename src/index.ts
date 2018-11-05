@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
-import isArray from 'lodash/isArray';
-import mergeWith from 'lodash/mergeWith';
+import isArray = require ( 'lodash/isArray' );
+import mergeWith = require ( 'lodash/mergeWith' );
 
 /* CONF MERGE */
 

@@ -3,7 +3,6 @@
     "alwaysStrict": true,
 		"declaration": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
 		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
     "inlineSourceMap": true,

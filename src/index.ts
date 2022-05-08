@@ -1,23 +1,69 @@
 
 /* IMPORT */
 
-import isArray = require ( 'lodash/isArray' );
-import mergeWith = require ( 'lodash/mergeWith' );
+import {isArray, isPrimitive} from 'is';
+import clone from 'plain-object-clone';
 
-/* CONF MERGE */
+/* MAIN */
 
-function confMerge ( object, ...sources ) {
+const mergeArrays = ( target: any, source: any ): any => {
 
-  return mergeWith ( object, ...sources, ( prev, next ) => {
+  return target.concat ( source );
 
-    if ( !isArray ( prev ) || !isArray ( next ) ) return;
+};
 
-    return prev.concat ( next );
+const mergeObjects = ( target: any, source: any ): any => {
 
-  });
+  for ( const key in source ) {
 
-}
+    if ( !source.hasOwnProperty ( key ) ) continue;
+
+    if ( key === 'constructor' || key === 'prototype' || key === '__proto__' ) continue;
+
+    const value = source[key];
+
+    if ( isPrimitive ( value ) ) {
+
+      if ( value !== undefined || !(key in target) ) {
+
+        target[key] = value;
+
+      }
+
+    } else if ( !target[key] || !isArray ( target[key] ) || !isArray ( value ) ) {
+
+      target[key] = clone ( value );
+
+    } else if ( isArray ( target[key] ) && isArray ( value ) ) {
+
+      target[key] = mergeArrays ( target[key], value );
+
+    } else {
+
+      target[key] = mergeObjects ( target[key], value );
+
+    }
+
+  }
+
+  return target;
+
+};
+
+const merge = ( ...objects: object[] ): object => {
+
+  const target = clone ( objects[0] );
+
+  for ( let i = 1, l = objects.length; i < l; i++ ) {
+
+    mergeObjects ( target, objects[i] );
+
+  }
+
+  return target;
+
+};
 
 /* EXPORT */
 
-export default confMerge;
+export default merge;

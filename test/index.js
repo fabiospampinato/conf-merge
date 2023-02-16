@@ -1,7 +1,6 @@
 
 /* IMPORT */
 
-import _ from 'lodash';
 import {describe} from 'fava';
 import merge from '../dist/index.js';
 
@@ -13,7 +12,7 @@ describe ( 'merge', it => {
 
     const obj1 = { foo: true, bar: [1, 2], baz: { qux: false } };
     const obj2 = { bar: [3, 4], baz: { qux: true } };
-    const merged = _.merge ( {}, obj1, obj2, { bar: [1, 2, 3, 4] } );
+    const merged = { foo: true, bar: [1, 2, 3, 4], baz: { qux: true } };
 
     t.deepEqual ( merge ( {}, obj1, obj2 ), merged );
 
@@ -23,7 +22,7 @@ describe ( 'merge', it => {
 
     const obj1 = { foo: true, bar: [1, 2], baz: { qux: false } };
     const obj2 = { bar: true, baz: { qux: true } };
-    const merged = _.merge ( {}, obj1, obj2 );
+    const merged = { foo: true, bar: true, baz: { qux: true } };
 
     t.deepEqual ( merge ( {}, obj1, obj2 ), merged );
 

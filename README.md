@@ -2,12 +2,10 @@
 
 Deep merges objects, concatenating arrays.
 
-It's simply a wrapper around [lodash](https://lodash.com)'s [_.mergeWith](https://lodash.com/docs/4.17.4#mergeWith), with a custom customizer.
-
 ## Install
 
 ```shell
-$ npm install --save conf-merge
+npm install --save conf-merge
 ```
 
 ## Usage

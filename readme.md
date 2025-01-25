@@ -4,14 +4,16 @@ Deep merges objects, concatenating arrays.
 
 ## Install
 
-```shell
-npm install --save conf-merge
+```sh
+npm install conf-merge
 ```
 
 ## Usage
 
 ```js
 import confMerge from 'conf-merge';
+
+// Let's create some objects to merge
 
 const obj1 = {
   foo: [1, 2],
@@ -26,6 +28,8 @@ const obj2 = {
     qux: true
   }
 };
+
+// Let's merge them
 
 confMerge ( {}, obj1, obj2 );
 // => {
